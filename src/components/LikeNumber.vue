@@ -1,14 +1,21 @@
 <template>
   <div>
-    <button @click="increment">いいね！({{ number }})</button>
+    <div>いいね({{ halfNumber }})</div>
+    <button @click="increment">+1</button>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      number: 0,
+  props: {
+    totalNumber: {
+      type: Number,  // 型を指定(バリデーション)
+      default: 10    // 初期値
+    },
+  },
+  computed: {
+    halfNumber() {
+      return this.totalNumber / 2;
     }
   },
   methods: {
