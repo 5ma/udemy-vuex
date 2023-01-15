@@ -1,34 +1,33 @@
 <template>
   <div>
     <LikeHeader>
-      <template #[title]="slotProps">
-        <div>{{ slotProps }}</div>
-        <p>titleスロットテスト</p>
-        <h3>はじめまして</h3>
-      </template>
-      <template v-slot:[test]>
-        <div>動的なslot名を指定する</div>
-      </template>
-      <div>デフォルトslot</div>
+      <h3>はじめまして</h3>
     </LikeHeader>
     <LikeNumber :total-number="number" @my-click="onMyClick"></LikeNumber>
-    <LikeNumber :total-number="number" @my-click="onMyClick"></LikeNumber>
+    <button @click="currentComponent = 'HomePage'">Home</button>
+    <button @click="currentComponent = 'AboutPage'">About</button>
+    <keep-alive>
+      <component :is="currentComponent"></component>
+    </keep-alive>
   </div>
 </template>
 
 <script>
 import LikeHeader from "./components/LikeHeader.vue";
+import HomePage from "./components/HomePage.vue";
+import AboutPage from "./components/AboutPage.vue";
 
 export default {
   data() {
     return {
       number: 10,
-      title: 'title',
-      test: 'test'
+      currentComponent: 'HomePage'
     }
   },
   components: {
-    LikeHeader
+    LikeHeader,
+    HomePage,
+    AboutPage,
   },
   methods: {
     onMyClick(value) {
