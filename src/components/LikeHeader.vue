@@ -1,11 +1,11 @@
 <template>
   <div>
-    <slot name="title" :user="user" text="hogehoge"><h2>デフォルトのタイトル</h2></slot>
+    <slot :user="user" text="hogehoge"><h2>デフォルトのタイトル</h2></slot>
     <hr>
     <slot></slot>
     <hr>
     <p>いいねの数</p>
-    <slot name="number"></slot>
+    <slot></slot>
   </div>
 </template>
 
