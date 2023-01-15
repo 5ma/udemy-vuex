@@ -1,8 +1,8 @@
 <template>
   <div>
-    <slot :user="user" text="hogehoge"><h2>デフォルトのタイトル</h2></slot>
+    <slot name="title" :user="user" text="hogehoge"><h2>デフォルトのタイトル</h2></slot>
     <hr>
-    <slot></slot>
+    <slot name="test"></slot>
     <hr>
     <p>いいねの数</p>
     <slot></slot>
