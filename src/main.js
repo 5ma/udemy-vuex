@@ -4,22 +4,8 @@ import LikeNumber from "./components/LikeNumber.vue";
 
 Vue.config.productionTip = false;
 Vue.component("LikeNumber", LikeNumber);
-Vue.directive("border", {
-  bind(el, binding, vnode) {
-    // ディレクティブが初めて対象の要素に紐づいたとき(最初の一回のみに呼ばれる)
-  },
-  inserted(el, binding, vnode) {
-    // 親Nodeに挿入されたとき
-  },
-  update(el, binding, vnode, oldVnode) {
-    // コンポーネントが更新されるたび。子コンポーネントが更新される前
-  },
-  componentUpdated(el, binding, vnode, oldVnode) {
-    // コンポーネントが更新されるたび。子コンポーネントが更新された後
-  },
-  unbind(el, binding, vnode) {
-    // ディレクティブが紐づいている要素から取り除かれたとき
-  },
+Vue.directive("border", (el, binding) => {
+  el.style.border = `${binding.arg} ${binding.value.color} ${binding.value.width}`;
 });
 
 new Vue({
