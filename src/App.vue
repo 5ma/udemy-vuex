@@ -11,9 +11,7 @@
     </keep-alive>
     <div>
       <h2>イベントのフォーム</h2>
-      <label for="title">title</label>
-      <input id="title" v-model.lazy="eventData.title" type="text">
-      <p>「{{ eventData.title }}」</p>
+      <EventTitle v-model="eventData.title"></EventTitle>
       <label for="max">最大人数</label>
       <input id="max" v-model.number="eventData.max" type="number">
       <p>「{{ typeof eventData.max }}」</p>
@@ -58,6 +56,7 @@
 import LikeHeader from "./components/LikeHeader.vue";
 import HomePage from "./components/HomePage.vue";
 import AboutPage from "./components/AboutPage.vue";
+import EventTitle from "./components/EventTitle.vue";
 
 export default {
   data() {
@@ -85,6 +84,7 @@ export default {
     LikeHeader,
     HomePage,
     AboutPage,
+    EventTitle
   },
   methods: {
     onMyClick(value) {
