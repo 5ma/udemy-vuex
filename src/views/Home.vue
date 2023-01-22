@@ -2,21 +2,18 @@
   <div>
     <h2>Home</h2>
     <button @click="toUsers">Userのページへ行く</button>
-    <div>{{ count }}</div>
-    <div>x2:{{ doubleCount }}</div>
+    <!-- <div>{{ count }}</div> -->
+    <div>x2:{{ myComponentDoubleCount }}</div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
-  computed: {
-    count() {
-      return this.$store.state.count;
-    },
-    doubleCount() {
-      return this.$store.getters.doubleCount;
-    },
-  },
+  // computed: mapGetters(["doubleCount"]),
+  computed: mapGetters({
+    myComponentDoubleCount: "doubleCount", // オブジェクトでもOK
+  }),
   methods: {
     toUsers() {
       // this.$router.push("users/10");
