@@ -3,6 +3,7 @@
     <h2>Home</h2>
     <button @click="toUsers">Userのページへ行く</button>
     <div>{{ count }}</div>
+    <div>x2:{{ doubleCount }}</div>
   </div>
 </template>
 
@@ -11,6 +12,9 @@ export default {
   computed: {
     count() {
       return this.$store.state.count;
+    },
+    doubleCount() {
+      return this.$store.getters.doubleCount;
     },
   },
   methods: {
