@@ -17,6 +17,17 @@ export default new Router({
     {
       path: "/users/:id",
       component: Users,
+      children: [
+        {
+          path: "posts",
+          component: UsersPosts,
+        },
+        {
+          path: "profile",
+          component: UsersProfile,
+          name: "users-id-profile",
+        },
+      ],
     },
   ],
 });
