@@ -2,8 +2,8 @@
   <div>
     <h2>Home</h2>
     <button @click="toUsers">Userのページへ行く</button>
-    <!-- <div>{{ count }}</div> -->
-    <div>x2:{{ myComponentDoubleCount }}</div>
+    <div>{{ $store.state.count }}</div>
+    <div>x2:{{ doubleCount }}</div>
   </div>
 </template>
 
@@ -11,9 +11,13 @@
 import { mapGetters } from "vuex";
 export default {
   // computed: mapGetters(["doubleCount"]),
-  computed: mapGetters({
-    myComponentDoubleCount: "doubleCount", // オブジェクトでもOK
-  }),
+  // computed: mapGetters({
+  //   myComponentDoubleCount: "doubleCount", // オブジェクトでもOK
+  // }),
+  computed: {
+    // ゲッターを、スプレッド演算子（object spread operator）を使って computed に組み込む
+    ...mapGetters(["doubleCount"]),
+  },
   methods: {
     toUsers() {
       // this.$router.push("users/10");
