@@ -43,5 +43,13 @@ export default new Router({
         },
       ],
     },
+    {
+      path: "/test*", // testから始まるURLは全てTOPにリダイレクト ex) /testdsadsdasd
+      redirect: "/",
+    },
+    {
+      path: "*", // この記述は、上記で設定したものにあてはまらないURLにアクセスしたらTOPにリダイレクトさせるというもの
+      redirect: "/",
+    },
   ],
 });
