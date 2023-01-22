@@ -27,7 +27,10 @@ export default new Router({
         default: Users,
         header: HeaderUsers,
       },
-      props: true,
+      props: {
+        default: true, // 名前付きビューごとにpropdを定義する必要がある事に注意
+        header: false,
+      },
       children: [
         {
           path: "posts",
