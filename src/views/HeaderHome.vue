@@ -17,8 +17,8 @@ export default {
     // increment() {
     //   this.$store.dispatch("increment", 2);
     // },
-    ...mapMutations(["decrement"]),
-    ...mapActions(["increment"]),
+    ...mapMutations("count", ["decrement"]),
+    ...mapActions("count", ["increment"]),
     // ...mapMutations({
     //   hoge: "increment",
     // }),

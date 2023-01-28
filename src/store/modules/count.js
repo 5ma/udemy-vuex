@@ -26,8 +26,9 @@ const actions = {
 };
 
 export default {
+  namespaced: true, // 名前付き空間を使う。count/doubleCount のように 最初に 名前/XXX というように呼び出せるようになる
   state,
   getters,
   mutations,
-  actions
-}
+  actions,
+};

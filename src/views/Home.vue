@@ -18,7 +18,7 @@ export default {
   // }),
   computed: {
     // ゲッターを、スプレッド演算子（object spread operator）を使って computed に組み込む
-    ...mapGetters(["doubleCount"]),
+    ...mapGetters("count", ["doubleCount"]),
     message: {
       get() {
         return this.$store.getters.message;
