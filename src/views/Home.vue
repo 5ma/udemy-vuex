@@ -4,6 +4,8 @@
     <button @click="toUsers">Userのページへ行く</button>
     <div>{{ $store.state.count }}</div>
     <div>x2:{{ doubleCount }}</div>
+    <input type="text" v-model="message" />
+    {{ message }}
   </div>
 </template>
 
@@ -17,6 +19,14 @@ export default {
   computed: {
     // ゲッターを、スプレッド演算子（object spread operator）を使って computed に組み込む
     ...mapGetters(["doubleCount"]),
+    message: {
+      get() {
+        return this.$store.getters.message;
+      },
+      set(value) {
+        this.$store.dispatch("updateMessage", value);
+      },
+    },
   },
   methods: {
     toUsers() {
