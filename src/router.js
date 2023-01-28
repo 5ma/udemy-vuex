@@ -10,7 +10,7 @@ import HeaderUsers from "./views/HeaderUsers.vue";
 // Vue Routerを使うという宣言
 Vue.use(Router);
 
-// routesに配列で、どのURLに度のコンポーネントを表示させるかの設定を書く
+// routesに配列で、どのURLにどのコンポーネントを表示させるかの設定を書く
 export default new Router({
   mode: "history",
   routes: [
