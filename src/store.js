@@ -19,12 +19,12 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    increment(context, number) {
-      context.commit('increment', number);
+    increment({ commit }, number) {
+      // ES6の書き方で使うプロパティだけを取り出すことが出来る
+      commit("increment", number);
       // context.state.count;
       // context.getters.doubleCount;
       // context.dispatch
     },
-    
-  }
+  },
 });
